@@ -1,0 +1,10 @@
+[
+  {
+    "message": "Your account will be locked in 1 hour. Click here to verify: http://fake-login.com",
+    "label": "phishing"
+  },
+  {
+    "message": "Hey, can you send me the meeting notes?",
+    "label": "safe"
+  }
+]
