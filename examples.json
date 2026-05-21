@@ -6,5 +6,18 @@
   {
     "message": "Hey, can you send me the meeting notes?",
     "label": "safe"
-  }
+  },
+  {
+  "email": "Your Microsoft 365 account will be suspended unless you verify immediately.",
+  "label": "phishing"
+},
+{
+  "email": "Reminder: Cybersecurity seminar starts at 3PM in Mackinac Hall.",
+  "label": "legitimate"
+},
+{
+  "email": "Your payroll information needs review before Friday.",
+  "label": "suspicious"
+}
+
 ]
