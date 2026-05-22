@@ -2,6 +2,18 @@
 
 Backend API for the AI-powered phishing detection system.
 
+# System Architecture
+
+Frontend (React + Vite on Vercel)
+        ↓
+Backend API (FastAPI on Render)
+        ↓
+OpenAI API
+        ↓
+Structured JSON phishing analysis
+        ↓
+Risk score + phishing indicators
+
 ## Features
 
 - FastAPI backend
@@ -20,6 +32,14 @@ Backend API for the AI-powered phishing detection system.
 - OpenAI API
 - Render deployment
 
+---
+# Security Considerations
+
+- API keys stored in environment variables
+- No user email persistence
+- CORS restricted to frontend domain
+- Structured JSON outputs for reliable parsing
+- Backend input validation implemented
 ---
 
 # API Endpoint
