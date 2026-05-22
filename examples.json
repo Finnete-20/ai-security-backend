@@ -18,6 +18,22 @@
 {
   "email": "Your payroll information needs review before Friday.",
   "label": "suspicious"
+},
+{
+  "email": "scholarship!scholarship! Apply today .",
+  "label": "suspicious"
+},
+{
+  "email": "Click OneDrive link to capture your working hours today .",
+  "label": "phishing"
+},
+{
+  "email": "This is professor Zachary Debruine, click the link below to log in for class today .",
+  "label": "phishing"
+},
+{
+  "email": "You have received this email to reset your password! .",
+  "label": "suspicious"
 }
 
 ]
