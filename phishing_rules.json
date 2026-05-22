@@ -1,6 +1,22 @@
 [
-  "Check for urgent language",
-  "Look for fake login links",
-  "Verify sender email domain",
-  "Be cautious of password reset requests"
+  "Flag emails that create urgency or fear to force immediate action (e.g., account suspension, legal action, payment failure).",
+  "Inspect sender domain mismatches, including spoofed domains or slight misspellings (e.g., micros0ft.com vs microsoft.com).",
+  "Identify credential harvesting attempts requesting passwords, MFA codes, or login verification.",
+  "Treat any external login link requesting authentication as high-risk unless domain is verified.",
+  "Flag unexpected password reset emails, especially when user did not initiate the request.",
+  "Analyze URLs for obfuscation techniques such as URL shortening, redirects, or mismatched display text.",
+  "Detect impersonation of trusted entities such as universities, IT departments, banks, or HR teams.",
+  "Flag attachments or shared documents that request login before viewing content.",
+  "Be cautious of requests for sensitive data including SSN, banking details, or student information.",
+  "Identify social engineering patterns such as authority pressure (e.g., CEO, professor, IT admin impersonation).",
+  "Flag emails that request MFA codes or verification tokens under any circumstance.",
+  "Check for poor grammar, unusual tone, or formatting inconsistencies often present in phishing attempts.",
+  "Identify “too good to be true” offers such as scholarships, refunds, or rewards requiring action.",
+  "Flag emails using generic greetings (e.g., 'Dear user', 'Dear customer') instead of personalized names.",
+  "Treat unexpected invoice or payment requests as suspicious unless previously contextualized.",
+  "Detect domain spoofing in reply-to headers or mismatched sender display names.",
+  "Flag emails instructing users to bypass normal security procedures or ignore warnings.",
+  "Identify urgency combined with external links as high-confidence phishing indicators.",
+  "Consider multi-stage phishing attempts where initial email builds trust before requesting sensitive data.",
+  "Treat any request involving credential input outside official portals as high risk."
 ]
