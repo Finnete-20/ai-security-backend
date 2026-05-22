@@ -1,39 +1,62 @@
 [
   {
-    "message": "Your account will be locked in 1 hour. Click here to verify: http://fake-login.com",
+    "email": "Your account will be locked in 1 hour. Click here to verify: http://fake-login.com",
     "label": "phishing"
   },
   {
-    "message": "Hey, can you send me the meeting notes?",
-    "label": "safe"
+    "email": "Hey, can you send me the meeting notes?",
+    "label": "legitimate"
   },
   {
-  "email": "Your Microsoft 365 account will be suspended unless you verify immediately.",
-  "label": "phishing"
-},
-{
-  "email": "Reminder: Cybersecurity seminar starts at 3PM in Mackinac Hall.",
-  "label": "legitimate"
-},
-{
-  "email": "Your payroll information needs review before Friday.",
-  "label": "suspicious"
-},
-{
-  "email": "scholarship!scholarship! Apply today .",
-  "label": "suspicious"
-},
-{
-  "email": "Click OneDrive link to capture your working hours today .",
-  "label": "phishing"
-},
-{
-  "email": "This is professor Zachary Debruine, click the link below to log in for class today .",
-  "label": "phishing"
-},
-{
-  "email": "You have received this email to reset your password! .",
-  "label": "suspicious"
-}
-
+    "email": "Your Microsoft 365 account will be suspended unless you verify immediately.",
+    "label": "phishing"
+  },
+  {
+    "email": "Reminder: Cybersecurity seminar starts at 3PM in Mackinac Hall.",
+    "label": "legitimate"
+  },
+  {
+    "email": "Your payroll information needs review before Friday. Login to confirm your banking details.",
+    "label": "suspicious"
+  },
+  {
+    "email": "Congratulations! You have been selected for a scholarship award. Submit your student details to claim your funds.",
+    "label": "suspicious"
+  },
+  {
+    "email": "Click the OneDrive link below to review your timesheet for this week.",
+    "label": "phishing"
+  },
+  {
+    "email": "This is Professor Zachary Debruine. Please log into the student portal before class today.",
+    "label": "phishing"
+  },
+  {
+    "email": "You requested a password reset for your university account.",
+    "label": "suspicious"
+  },
+  {
+    "email": "IT Help Desk: Your mailbox storage is almost full. Verify your account to avoid interruption.",
+    "label": "phishing"
+  },
+  {
+    "email": "Invoice attached for your recent software purchase. Review payment immediately.",
+    "label": "phishing"
+  },
+  {
+    "email": "Your academic advising appointment has been confirmed for Thursday at 1 PM.",
+    "label": "legitimate"
+  },
+  {
+    "email": "Multi-factor authentication code: 839221. Do not share this code with anyone.",
+    "label": "legitimate"
+  },
+  {
+    "email": "Your financial aid application requires additional verification documents.",
+    "label": "suspicious"
+  },
+  {
+    "email": "Shared document from OneDrive: Final_Project_Report.pdf",
+    "label": "suspicious"
+  }
 ]
