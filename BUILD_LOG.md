@@ -4,43 +4,59 @@
 
 Build an AI-assisted phishing detection system that helps users and SOC analysts identify phishing emails using structured AI analysis, grounded context, and measurable evaluation.
 
+The system is designed as a prototype SOC (Security Operations Center) tool that applies LLM-based reasoning to email threat classification.
+
 ---
 
-# System Overview
+# System Overview (End-to-End Architecture)
 
-This project is an AI-powered phishing detection system designed for SOC-style email analysis.
+This project implements a full-stack AI phishing detection pipeline:
 
-The system:
-- Accepts raw email input from a frontend interface
-- Sends it to a FastAPI backend
-- Uses an LLM with structured prompting and grounding data
-- Returns:
+Frontend (React + Vite on Vercel)
+→ Captures raw email input and sends request to backend API
+
+Backend (FastAPI on Render)
+→ Preprocesses request and constructs structured LLM prompt
+
+LLM Layer (OpenAI API)
+→ Performs phishing classification using:
+  - SOC analyst system prompt
+  - phishing_rules.json (grounded security rules)
+  - examples.json (few-shot learning examples)
+
+Output Layer
+→ Returns structured JSON response:
   - classification (phishing / legitimate / suspicious)
   - risk score (0–100)
-  - explanation of phishing indicators
+  - phishing indicators explanation
 
 ---
 
 # Initial Idea
 
-The project was inspired by the growing number of phishing attacks targeting students and organizations. As a cybersecurity graduate student, I wanted to build a practical AI tool that simulates SOC analyst workflows and applies structured reasoning to email threat detection.
+The project was inspired by the increasing frequency and sophistication of phishing attacks targeting students, universities, and enterprise environments.
+
+As a cybersecurity graduate student, the goal was to build a practical SOC-style AI assistant that mimics real-world email triage workflows using structured reasoning and measurable outputs.
 
 ---
 
-# Prompt Iteration History
+# Prompt Engineering Iteration History (Core Contribution)
 
-## Prompt Version 1 (Baseline)
+This project demonstrates iterative prompt engineering with measurable system improvement.
+
+## Prompt Version 1 (Baseline – Unstructured)
 
 Initial prompt:
 "Classify if the email is phishing or not."
 
-### Problems
-- Inconsistent responses
-- No structured output
-- Vague reasoning
-- Difficult frontend parsing
+### Limitations
+- Inconsistent outputs
+- No structured JSON format
+- Weak reasoning transparency
+- Difficult frontend integration
 
-**Impact:** Demonstrated need for structured constraints and role definition.
+### Outcome
+Established baseline and highlighted need for structured constraints.
 
 ---
 
@@ -50,158 +66,151 @@ Added SOC analyst role:
 "You are a cybersecurity SOC analyst analyzing emails for phishing indicators."
 
 Added:
-- structured JSON output requirement
-- phishing indicators list
+- structured JSON output format
+- phishing indicators field
 
 ### Improvements
-- More consistent classification
+- Increased classification consistency
 - Improved reasoning quality
-- Better integration with frontend
+- Better integration with frontend parsing
 
-**Impact:** Introduced domain specialization and improved reliability.
+### Outcome
+Introduced domain-specific reasoning behavior aligned with SOC workflows.
 
 ---
 
-## Prompt Version 3 (Production Version)
+## Prompt Version 3 (Production Version – Final System)
 
 Final improvements:
-- Strict JSON schema enforced
-- Risk scoring (0–100) added
-- Grounding files integrated:
+- Strict JSON schema enforcement
+- Risk scoring system (0–100)
+- Integration of grounding datasets:
   - phishing_rules.json
   - examples.json
 
 ### Improvements
-- Reduced hallucinations
-- Stable structured output
-- Better phishing detection consistency
-- Improved SOC realism
+- Significant reduction in hallucinated outputs
+- Stable structured JSON responses
+- Improved phishing detection consistency
+- Better SOC realism in reasoning process
 
-**Impact:** Production-ready prompt with grounded reasoning and structured output.
+### Outcome
+Final production-ready prompt with grounded reasoning + structured outputs.
 
 ---
 
-# Evaluation Integration
+# Evaluation Integration (Measured System Design)
 
-The final system was tested using a held-out dataset of phishing, legitimate, and edge-case emails.
+The final system was evaluated using a held-out dataset of phishing, legitimate, and edge-case emails.
 
-Evaluation focused on:
+Evaluation metrics included:
 - classification accuracy
-- false positives (legitimate marked as phishing)
-- false negatives (phishing marked as legitimate)
-- risk score consistency
+- false positives (legitimate classified as phishing)
+- false negatives (phishing classified as legitimate)
+- risk score consistency across samples
 
-This ensured the model behaves as a measurable SOC-style detection system rather than a simple chatbot.
+## Key Insight
+
+This evaluation demonstrates that system performance is directly influenced by:
+- prompt structure
+- grounding quality
+- few-shot example design
+
+This transforms the system from a chatbot into a measurable SOC-style detection pipeline.
 
 ---
 
 # AI-Assisted Development Workflow
 
-AI tools (ChatGPT + GitHub Copilot) were used as development assistants, not autonomous builders.
+AI tools (ChatGPT + GitHub Copilot) were used as development accelerators, not autonomous builders.
 
 They supported:
-- debugging backend FastAPI routing issues
-- resolving CORS and deployment errors
-- fixing Vite production build and asset path issues
+- debugging FastAPI backend routing issues
+- resolving CORS and API integration problems
+- fixing Vite production build and deployment errors
 - refining structured JSON prompt design
 - improving phishing classification consistency
 - accelerating iteration of prompt versions
 
-Key insight:
-AI tools perform best when given strict constraints, structured output formats, and domain-specific context (SOC analyst role + grounding data).
+## Key Engineering Insight
+
+Performance improved significantly when:
+- strict output schemas were enforced
+- domain context (SOC analyst role) was added
+- grounding data was introduced
+
+This confirms that LLM performance is highly dependent on structured constraints and contextual grounding.
 
 ---
 
-# Deployment Challenges
+# Deployment Challenges & Resolutions
 
 ## Backend Deployment (Render)
 
-### Problem
-Deployment failed due to Python version mismatch (Pydantic build errors).
+### Issue
+Deployment failure due to Python version mismatch (Pydantic build errors).
 
-### Solution
-Pinned runtime:
+### Fix
+Pinned runtime using:
 runtime.txt → python-3.11.9
 
-### Key Learning
-Production environments require strict dependency and runtime version control.
+### Learning
+Production AI systems require strict dependency and runtime control.
 
 ---
 
-## GitHub Secret Scanning
+## GitHub Secret Exposure Protection
 
-### Problem
-Push blocked due to exposed OpenAI API key in .env.
+### Issue
+Push blocked due to exposed API key in .env file.
 
-### Solution
+### Fix
 - Removed .env from Git history
 - Added .env to .gitignore
 - Migrated secrets to Render environment variables
 
-### Key Learning
-Proper secret management is critical in production AI systems.
+### Learning
+Secure secret management is essential in production AI systems.
 
 ---
 
 ## Frontend Deployment (Vercel)
 
-### Problem
-Blank page and 404 asset errors during deployment.
+### Issue
+Blank page and asset 404 errors.
 
-### Cause
-Incorrect Vite production configuration.
+### Root Cause
+Incorrect Vite production build configuration.
 
-### Solution
+### Fix
 - Fixed Vite base path configuration
 - Rebuilt production bundle
 - Reconfigured Vercel deployment settings
 
-### Key Learning
-Frontend build tooling configuration is as important as backend logic.
-
----
-
-# Final Architecture
-
-Frontend (React + Vite on Vercel)
-→ Captures email input and sends request to backend API
-
-Backend (FastAPI on Render)
-→ Processes request and constructs structured prompt
-
-LLM Layer (OpenAI API)
-→ Performs phishing classification using:
-   - SOC analyst system prompt
-   - phishing_rules.json (grounding)
-   - examples.json (few-shot learning)
-
-Output Layer
-→ Returns structured JSON:
-   - classification
-   - risk score
-   - phishing indicators explanation
+### Learning
+Frontend build configuration is critical in full-stack AI deployment pipelines.
 
 ---
 
 # Engineering Summary
 
-This project demonstrates an end-to-end AI security system combining:
+This project demonstrates a complete AI security system combining:
 
-- prompt engineering lifecycle (V1 → V3)
+- iterative prompt engineering (V1 → V3)
 - grounded few-shot learning
 - structured evaluation methodology
-- full-stack deployment pipeline
+- full-stack deployment (Vercel + Render)
 - SOC-style threat analysis modeling
 
-The goal was not only to build a working tool, but to design a measurable, reproducible AI pipeline for phishing detection.
+The system was designed not only as a functional tool, but as a **measurable and reproducible AI pipeline for phishing detection**.
 
 ---
 
 # Future Improvements
 
-- Expand phishing dataset for evaluation
-- Improve false positive reduction
-- Add email header and domain analysis
+- Expand evaluation dataset for higher statistical reliability
+- Improve false positive reduction in edge cases
+- Add email header + domain reputation analysis
 - Integrate external threat intelligence APIs
 - Reduce backend cold-start latency
-- Improve UI/UX experience
+- Improve UI/UX for SOC analyst workflow simulation
