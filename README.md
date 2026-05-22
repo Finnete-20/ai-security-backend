@@ -69,11 +69,6 @@ Frontend (Vercel)
 pip install -r requirements.txt
 uvicorn main:app --reload
 ```
-## Evaluation
-
-See full system evaluation here: https://github.com/Finnete-20/ai-security-backend/blob/main/evaluation.md?utm_source=chatgpt.com
-
-
 ---
 
 # Tech Stack
