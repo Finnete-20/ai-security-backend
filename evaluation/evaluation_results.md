@@ -1,3 +1,14 @@
+## Evaluation Methodology
+
+Each email was tested using the deployed phishing detection API.
+
+For each sample:
+- The email text was sent to the backend endpoint
+- The model returned a classification (phishing / legitimate / suspicious)
+- A risk score (0–100) was generated
+- Results were compared against manually curated ground truth labels
+
+Ground truth was based on known phishing patterns, university communication examples, and common SOC analyst heuristics.
 
 # Evaluation Results
 
