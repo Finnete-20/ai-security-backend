@@ -1,0 +1,18 @@
+
+[
+  {
+    "id": 1,
+    "email": "This is a simulated phishing awareness training email from IT Services.",
+    "expected": "edge_case"
+  },
+  {
+    "id": 2,
+    "email": "Dropbox shared a file with you: Final_Project.pdf",
+    "expected": "edge_case"
+  },
+  {
+    "id": 3,
+    "email": "Reset your password using the official university portal.",
+    "expected": "edge_case"
+  }
+]

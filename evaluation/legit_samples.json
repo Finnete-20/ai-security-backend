@@ -1,4 +1,4 @@
-@'
+
 [
   {
     "id": 1,
@@ -26,4 +26,3 @@
     "expected": "legitimate"
   }
 ]
-'@ | Set-Content evaluation\legit_samples.json

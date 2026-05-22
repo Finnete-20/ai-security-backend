@@ -1,4 +1,4 @@
-@'
+
 [
   {
     "id": 1,
@@ -26,4 +26,3 @@
     "expected": "phishing"
   }
 ]
-'@ | Set-Content evaluation\phishing_samples.json

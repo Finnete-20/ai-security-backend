@@ -1,4 +1,4 @@
-@'
+
 # Evaluation Results
 
 ## Dataset Summary
@@ -36,7 +36,7 @@ Total Samples: 13
 - Add email header analysis
 - Improve edge-case handling
 - Reduce backend latency
-'@ | Set-Content evaluation\evaluation_results.md
+
 # Detailed Evaluation Results
 
 | Sample ID | Expected | Predicted | Risk Score | Correct |
