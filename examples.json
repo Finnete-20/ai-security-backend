@@ -1,62 +1,44 @@
 [
-  {
-    "email": "Your account will be locked in 1 hour. Click here to verify: http://fake-login.com",
-    "label": "phishing"
-  },
-  {
-    "email": "Hey, can you send me the meeting notes?",
-    "label": "legitimate"
-  },
-  {
-    "email": "Your Microsoft 365 account will be suspended unless you verify immediately.",
-    "label": "phishing"
-  },
-  {
-    "email": "Reminder: Cybersecurity seminar starts at 3PM in Mackinac Hall.",
-    "label": "legitimate"
-  },
-  {
-    "email": "Your payroll information needs review before Friday. Login to confirm your banking details.",
-    "label": "suspicious"
-  },
-  {
-    "email": "Congratulations! You have been selected for a scholarship award. Submit your student details to claim your funds.",
-    "label": "suspicious"
-  },
-  {
-    "email": "Click the OneDrive link below to review your timesheet for this week.",
-    "label": "phishing"
-  },
-  {
-    "email": "This is Professor Zachary Debruine. Please log into the student portal before class today.",
-    "label": "phishing"
-  },
-  {
-    "email": "You requested a password reset for your university account.",
-    "label": "suspicious"
-  },
-  {
-    "email": "IT Help Desk: Your mailbox storage is almost full. Verify your account to avoid interruption.",
-    "label": "phishing"
-  },
-  {
-    "email": "Invoice attached for your recent software purchase. Review payment immediately.",
-    "label": "phishing"
-  },
-  {
-    "email": "Your academic advising appointment has been confirmed for Thursday at 1 PM.",
-    "label": "legitimate"
-  },
-  {
-    "email": "Multi-factor authentication code: 839221. Do not share this code with anyone.",
-    "label": "legitimate"
-  },
-  {
-    "email": "Your financial aid application requires additional verification documents.",
-    "label": "suspicious"
-  },
-  {
-    "email": "Shared document from OneDrive: Final_Project_Report.pdf",
-    "label": "suspicious"
-  }
+  { "email": "Your account will be locked in 1 hour. Click here to verify: http://fake-login.com", "label": "phishing" },
+  { "email": "Urgent: Your Microsoft 365 session has expired. Login immediately to avoid data loss.", "label": "phishing" },
+  { "email": "IT Support: Verify your credentials to restore email access.", "label": "phishing" },
+  { "email": "Security Alert: Suspicious login detected from unknown device. Confirm identity now.", "label": "phishing" },
+  { "email": "Your payroll details are outdated. Submit banking information to continue receiving payments.", "label": "phishing" },
+  { "email": "We noticed unusual activity. Reset your password using the link below immediately.", "label": "phishing" },
+  { "email": "Invoice overdue. Pay immediately to avoid account suspension.", "label": "phishing" },
+  { "email": "Your OneDrive file was shared with you. Click to access document.", "label": "phishing" },
+  { "email": "HR: Confirm your employee benefits before they expire today.", "label": "phishing" },
+  { "email": "You have been selected for a scholarship. Submit SSN and bank details to claim.", "label": "phishing" },
+  { "email": "Your email storage is full. Verify account to avoid service interruption.", "label": "phishing" },
+  { "email": "Click here to review your timesheet and confirm working hours.", "label": "phishing" },
+  { "email": "Your tax refund is pending. Submit verification to receive funds.", "label": "phishing" },
+  { "email": "Microsoft Teams: You missed important messages. Login here to view.", "label": "phishing" },
+  { "email": "Your account has been temporarily suspended due to policy violation.", "label": "phishing" },
+
+  { "email": "Hey, can you send me the meeting notes from yesterday?", "label": "legitimate" },
+  { "email": "Reminder: Team meeting scheduled for 3 PM in Mackinac Hall.", "label": "legitimate" },
+  { "email": "Your cybersecurity class assignment is due next Friday.", "label": "legitimate" },
+  { "email": "Professor: Office hours are moved to Thursday 2 PM.", "label": "legitimate" },
+  { "email": "Your tuition payment has been successfully processed.", "label": "legitimate" },
+  { "email": "Library: Your borrowed book is due next week.", "label": "legitimate" },
+  { "email": "IT Maintenance: Scheduled downtime this weekend for system updates.", "label": "legitimate" },
+  { "email": "Your student ID card request has been approved.", "label": "legitimate" },
+  { "email": "Campus event: Cybersecurity seminar starts at 3 PM today.", "label": "legitimate" },
+  { "email": "Your parking permit has been renewed successfully.", "label": "legitimate" },
+  { "email": "Zoom meeting link for class discussion is attached.", "label": "legitimate" },
+  { "email": "Your academic advising appointment is confirmed.", "label": "legitimate" },
+  { "email": "Reminder: Submit project report by end of week.", "label": "legitimate" },
+  { "email": "MFA code: 483920. Do not share this code with anyone.", "label": "legitimate" },
+  { "email": "Your email password was successfully changed.", "label": "legitimate" },
+
+  { "email": "Your payroll information needs review before Friday.", "label": "suspicious" },
+  { "email": "You have a shared document from OneDrive. Please review.", "label": "suspicious" },
+  { "email": "HR: Update your employee profile information if needed.", "label": "suspicious" },
+  { "email": "Invoice attached for recent purchase. Please verify details.", "label": "suspicious" },
+  { "email": "Your account settings require confirmation of contact details.", "label": "suspicious" },
+  { "email": "Security team requests confirmation of recent login activity.", "label": "suspicious" },
+  { "email": "Password reset request detected. If not you, ignore this email.", "label": "suspicious" },
+  { "email": "IT notice: mailbox storage nearing limit. Action may be required.", "label": "suspicious" },
+  { "email": "Finance: Pending transaction requires review.", "label": "suspicious" },
+  { "email": "You received a document from external sender for approval.", "label": "suspicious" }
 ]
