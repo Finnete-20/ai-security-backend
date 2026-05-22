@@ -1,0 +1,29 @@
+@'
+[
+  {
+    "id": 1,
+    "email": "Reminder: Cybersecurity Capstone meeting tomorrow at 3 PM.",
+    "expected": "legitimate"
+  },
+  {
+    "id": 2,
+    "email": "Your tuition payment receipt is attached.",
+    "expected": "legitimate"
+  },
+  {
+    "id": 3,
+    "email": "Library book due reminder from Grand Valley State University.",
+    "expected": "legitimate"
+  },
+  {
+    "id": 4,
+    "email": "Your appointment with academic advising has been confirmed.",
+    "expected": "legitimate"
+  },
+  {
+    "id": 5,
+    "email": "Your Microsoft MFA verification code is 839221.",
+    "expected": "legitimate"
+  }
+]
+'@ | Set-Content evaluation\legit_samples.json

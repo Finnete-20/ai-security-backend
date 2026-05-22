@@ -1,0 +1,29 @@
+@'
+[
+  {
+    "id": 1,
+    "email": "Your Microsoft account has been suspended. Verify immediately using the link below.",
+    "expected": "phishing"
+  },
+  {
+    "id": 2,
+    "email": "Your package delivery failed. Pay the shipping fee to reschedule.",
+    "expected": "phishing"
+  },
+  {
+    "id": 3,
+    "email": "GVSU payroll update required. Login now to avoid suspension.",
+    "expected": "phishing"
+  },
+  {
+    "id": 4,
+    "email": "You have won a scholarship grant. Submit your bank information to receive funds.",
+    "expected": "phishing"
+  },
+  {
+    "id": 5,
+    "email": "Unusual login detected. Confirm your password immediately.",
+    "expected": "phishing"
+  }
+]
+'@ | Set-Content evaluation\phishing_samples.json
