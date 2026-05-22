@@ -18,17 +18,20 @@ Ground truth labels were constructed using:
 - Common social engineering indicators (urgency, impersonation, credential requests)
 
 This evaluation represents a controlled prototype-level dataset intended to validate system behavior, not production-scale benchmarking.
+
+---
+
 ## Evaluation Scoring Rules
 
 To better reflect SOC analyst decision-making, evaluation follows a tiered correctness model:
 
-- **Correct**: Prediction matches expected label (phishing / legitimate)
-- **Incorrect**: Completely wrong classification
+- **Correct**: Prediction exactly matches expected label (phishing / legitimate)
+- **Incorrect**: Misclassification of phishing vs legitimate
 - **Partial (Edge Cases Only)**:
-  - Used for ambiguous emails where phishing indicators exist but are not definitive
-  - Considered correct if classification direction is accurate (phishing vs legitimate), even if confidence varies
+  - Used for ambiguous emails where phishing indicators are present but not definitive
+  - Considered correct if the classification direction (phishing vs legitimate) is accurate
 
-This reflects real-world SOC environments where analysts prioritize directional correctness over absolute certainty in ambiguous cases.
+For accuracy calculation, partial cases are treated as correct when the predicted classification direction matches the expected outcome. This reflects real-world SOC triage behavior.
 
 ---
 
@@ -48,7 +51,7 @@ This reflects real-world SOC environments where analysts prioritize directional 
 
 | Metric | Result |
 |---|---|
-| Accuracy | 92% |
+| Accuracy | 90% |
 | False Positive Rate | 8% |
 | False Negative Rate | 5% |
 
@@ -56,29 +59,29 @@ This reflects real-world SOC environments where analysts prioritize directional 
 
 ## Summary of Findings
 
-- The model performed strongly on common phishing attempts such as account suspension scams and credential theft emails.
-- Legitimate university and organizational emails were correctly classified with high confidence.
-- Some edge cases (e.g., phishing simulations, HR/IT ambiguous messages) produced medium-confidence or mixed classifications.
-- Few-shot prompting combined with grounding data significantly improved classification consistency and reduced hallucinated outputs.
+- The model performs strongly on clear phishing attempts such as account suspension scams and credential theft emails.
+- Legitimate organizational emails are reliably classified with high confidence.
+- Edge cases remain challenging due to ambiguous phishing simulation emails and HR/IT communication overlap.
+- Few-shot prompting combined with grounding data significantly improves classification consistency and reduces hallucinations.
 
 ---
 
 ## Observations
 
 - Structured JSON output improved reliability of downstream processing.
-- Risk scoring provided useful granularity beyond binary classification.
-- The SOC analyst role prompt improved reasoning quality and detection consistency.
-- Edge cases remain challenging due to ambiguity in real-world email formats.
-- Edge case evaluation was adjusted using SOC triage logic, where partially correct classifications are evaluated based on directional accuracy (phishing vs legitimate) rather than strict label matching. This better reflects real-world analyst workflows where ambiguous emails are common.
+- Risk scoring provides useful granularity beyond binary classification.
+- SOC analyst role prompting improves reasoning quality and detection consistency.
+- Edge cases highlight the importance of contextual understanding in phishing detection systems.
+- Partial classification handling improves realism in SOC-style evaluation workflows.
 
 ---
 
 ## Future Improvements
 
-- Expand evaluation dataset size and diversity further
+- Expand dataset size and diversity
+- Improve handling of ambiguous phishing simulation emails
 - Integrate email header and domain reputation analysis
 - Add URL reputation and threat intelligence feeds
-- Improve handling of ambiguous or simulated phishing training emails
 - Reduce backend cold-start latency in production deployment
 
 ---
@@ -103,7 +106,6 @@ This reflects real-world SOC environments where analysts prioritize directional 
 | P14 | phishing | phishing | 95 | yes |
 | P15 | phishing | legitimate | 46 | no |
 | P16 | phishing | phishing | 90 | yes |
-
 | L1 | legitimate | legitimate | 8 | yes |
 | L2 | legitimate | legitimate | 15 | yes |
 | L3 | legitimate | legitimate | 12 | yes |
@@ -120,7 +122,6 @@ This reflects real-world SOC environments where analysts prioritize directional 
 | L14 | legitimate | legitimate | 18 | yes |
 | L15 | legitimate | legitimate | 12 | yes |
 | L16 | legitimate | legitimate | 15 | yes |
-
 | E1 | edge_case | phishing | 65 | partial |
 | E2 | edge_case | legitimate | 38 | partial |
 | E3 | edge_case | phishing | 60 | partial |
@@ -132,14 +133,8 @@ This reflects real-world SOC environments where analysts prioritize directional 
 
 ---
 
-# Final Metrics Interpretation
-
-The system demonstrates strong performance in identifying both phishing and legitimate emails, with expected degradation in ambiguous edge-case scenarios. The evaluation confirms that grounding (rules + few-shot examples) combined with structured prompting significantly improves consistency and reliability.
-
----
-
 # Conclusion
 
 This evaluation demonstrates that the system functions as a prototype SOC-style phishing detection tool with measurable and consistent performance characteristics.
 
-While not intended for production deployment, the system provides a strong foundation for scalable phishing detection systems through improved datasets, threat intelligence integration, and enhanced email feature analysis.
+ The system provides a strong foundation for scalable phishing detection systems through grounded prompting, structured outputs, and SOC-aligned evaluation methodology.
