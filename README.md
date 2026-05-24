@@ -131,9 +131,11 @@ The architecture below describes the current implementation of the AI-powered ph
 ├── vite.config.js             # Vite configuration
 ├── package.json               # Frontend dependencies and scripts
 ├── index.html                 # Frontend HTML entry point
-
+```
  
+
  ### Backend Repository
+ ```text
 /backend
 ├── main.py                     # FastAPI backend entry point
 ├── phishing_rules.json         # Grounding rules for phishing detection
@@ -148,7 +150,7 @@ The architecture below describes the current implementation of the AI-powered ph
 │   ├── legit_samples.json     # Legitimate email dataset
 │   ├── edge_cases.json        # Ambiguous and edge-case emails
 │   └── evaluation_results.md  # Detailed evaluation outputs
-
+```
 # Run Locally
 
 ```bash
