@@ -69,3 +69,10 @@ System performance improved primarily through:
 - structured output constraints
 - grounding data injection
 - iterative prompt refinement (V1 → V3)
+
+# Observation
+- Observed backend cold-start latency on Render deployment (~20–25 seconds) due to free-tier container spin-up behavior.
+- Structured JSON constraints dramatically improved frontend reliability.
+- Grounding files reduced hallucinations and improved phishing classification consistency.
+- Deployment engineering introduced more complexity than initial prompt development,    particularly around CORS and API routing behavior.
+- Edge-case phishing detection remains significantly harder than obvious phishing classification.
