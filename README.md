@@ -9,6 +9,7 @@ Backend API for SOC-style AI phishing detection using OpenAI.
 # System Architecture
 The architecture below describes the current implementation of the AI-powered phishing detection pipeline. The system uses structured prompting, grounding files, and SOC-style reasoning to analyze email content and return explainable JSON security reports.
 
+```text
 ┌────────────────────┐
 │  User Email Input  │
 │  (Frontend UI)     │
@@ -63,6 +64,7 @@ The architecture below describes the current implementation of the AI-powered ph
 │ Risk visualization │
 │ SOC-style output   │
 └────────────────────┘
+```
 
 ---
 
